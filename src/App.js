@@ -13,7 +13,7 @@ export default  class App extends React.Component {
     }
 
     onClick = (e) => {
-        console.log(...this.state.list)
+        console.log('---',...this.state.list)
         this.setState({
             list:[...this.state.list, this.state.inputvalue],
             inputvalue:''
