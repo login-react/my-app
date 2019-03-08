@@ -4,5 +4,17 @@ import App from './App';
 import Parent from './Parent/Parent'
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<Parent />, document.getElementById('root'));
+import {Provider} from 'react-redux'
+import {createStore} from 'redux'
+import reducer from  './Components/reducer'
+import 'antd/dist/antd.css'
+
+const store = createStore(reducer)
+
+ReactDOM.render(
+  <Provider store={store}>
+    <Parent />
+  </Provider>,
+   document.getElementById('root')
+);
 registerServiceWorker();
