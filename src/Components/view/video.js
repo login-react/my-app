@@ -38,8 +38,7 @@ export default class Video extends React.Component {
       newData: [],
       useData:[],
       isToggleOn: true,
-      data:new Date(),
-      currentValue: ''
+      data:new Date()
     }
   }
   /**
@@ -81,8 +80,11 @@ export default class Video extends React.Component {
       },
     ]
     this.setState({
-      newData: data,
-      useData: data
+      newData: data || [{}],
+      /**
+       * 复制数据
+       */
+      useData: data || [{}]
     })
   }
 
@@ -102,11 +104,14 @@ export default class Video extends React.Component {
    */
   getCurrentValue = (e) => {
     //处理逻辑
-    this.changeStateNumber(e.target.value)
+    this.changeStateData(e.target.value)
   }
 
-  changeStateNumber = value => {
-    const useData = this.state.newData.filter( v => v ? v.name.includes(value):true)
+  /**
+   * 当输入框输入的值，进行模糊查询
+   */
+  changeStateData = value => {
+    const useData = this.state.newData.filter( v => v ? v.name.includes(value) : true)
     this.setState({
       useData: useData
     })
@@ -147,6 +152,8 @@ export default class Video extends React.Component {
          测试子父节点传值
        </div>
        <Input placeholder="请输入当前值" onChange={this.getCurrentValue}/>
+
+       {/* 展示输入框模糊查询过的数据 */}
        <ul>
          {
            this.state.useData.map((item,index) => {
