@@ -1,15 +1,69 @@
 
 $color: red;
 $grey: grey;
+$blue:blue;
 
 .testScss{
   @for $i from 1 through 2 {
     .test_#{$i}{
+       background-size: 100% 100%;
        border: 1px solid $grey;
        border-radius: 5px;
        background: $color;
        opacity: 0.4;
        margin-top: 5px;
+       &:hover{
+         background: $blue;
+       }
+       &:active{
+         background: $grey;
+       }
     }
   }
 }
+.testScss::before{
+  content: ".";
+  background:grey;
+  width: 10px;
+  height: 10px;
+}
+
+.testScss::after{
+  content: 'F'
+}
+
+// nth-of-type(2)第三个p元素
+// p:nth-of-type(2){
+//   background: grey;
+//   opacity: 0.3;
+// }
+
+// 隔行换色
+
+// p:nth-of-type(odd){
+//   background: grey;
+// }
+// p:nth-of-type(even){
+//   background: blue;
+// }
+
+// 指定空的元素的背影色
+// <p>指定空的元素的背影色</p>
+// p:empty{
+// width:100px;
+// height:100px;
+// background:red;
+//}
+
+
+// not('.a')
+
+// li:not(.a){color:blue;}
+// <li class="a>蚂蚁部落</li>
+
+/**
+
+  input:disabled {
+      background:#ccc;
+  }
+*/
