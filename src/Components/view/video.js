@@ -52,10 +52,16 @@ export default class Video extends React.Component {
     this.timerID = setInterval(() => this.tick(),1000)
   }
 
+  /**
+   * 销毁
+   */
   componentWillUnmount(){
     clearInterval(this.timerID)
   }
   
+  /**
+   * 计数
+   */
   tick = () => {
     this.setState({
       data: new Date()
@@ -88,12 +94,18 @@ export default class Video extends React.Component {
     })
   }
 
+  /**
+   * 点击时改变
+   */
   handleClick = () => {
     this.setState({
       isToggleOn:!this.state.isToggleOn
     })
   }
 
+  /**
+   * 传值
+   */
   handleClicValue = () => {
     const value = '13'
     this.props.grant(value)
