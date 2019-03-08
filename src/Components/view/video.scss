@@ -1,0 +1,15 @@
+
+$color: red;
+$grey: grey;
+
+.testScss{
+  @for $i from 1 through 2 {
+    .test_#{$i}{
+       border: 1px solid $grey;
+       border-radius: 5px;
+       background: $color;
+       opacity: 0.4;
+       margin-top: 5px;
+    }
+  }
+}

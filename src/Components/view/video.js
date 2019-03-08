@@ -1,6 +1,6 @@
 import React from 'react'
 import {Input} from 'antd'
-import { Player } from 'video-react';
+import myStyle from './video.scss'
 const video ={
   color: 'red'
 }
@@ -175,6 +175,10 @@ export default class Video extends React.Component {
            })
          }
        </ul>
+       <div className="testScss">
+         <div className="test_1">234234</div>
+         <div className="test_2">234234</div>
+       </div>
       </div>
     )
   }
