@@ -50,8 +50,8 @@ export default  class Parent extends React.Component {
             <Views/>
             {/* <ShowDetail/> */}
             <Counter/>
-            <span style={{color: 'red', fontWeight: 'bold'}}>{this.state.ageShow}</span>
-            <Button type="primary">测试antd</Button>
+            {/* <span style={{color: 'red', fontWeight: 'bold'}}>{this.state.ageShow}</span>
+            <Button type="primary">测试antd</Button> */}
            <ul>
                {/* {
                    this.state.displayData.map((item,index) => {
